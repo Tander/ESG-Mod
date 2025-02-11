@@ -24,7 +24,7 @@
   <!-- ************************* -->
   <!-- ** BEHEMOTH MODULES    ** -->
   <!-- ************************* -->
-  
+
   <SystemSupportModule Name="ModuleSupportJuggernautFIDSFlat" Family="SystemSupportFIDS" Level="1">
     <Cost ResourceName="SystemProduction">90</Cost>
     <DownloadableContentPrerequisite Flags="Prerequisite,Discard,UnlockAvailability">DLCHisshos</DownloadableContentPrerequisite>
@@ -69,7 +69,7 @@
       <SimulationDescriptorReference Name="ModuleSupportJuggernautResearchStarting"/>
     </CategorizedSimulationDescriptors>
   </SupportModule>
-  
+
   <!--  Dynamic  -->
   <SupportModule Name="ModuleSupportJuggernautAnalyzer2" Family="JuggernautAnalyzerBase" Level="1">
     <Cost ResourceName="SystemProduction">120</Cost>
@@ -363,13 +363,13 @@
     <!--Battle action used after a battle-->
     <BattleActionReference Name="Ship_ShieldRegenerationPerSecond"/>
   </SupportModule>
-  
+
   <!-- Shield Reloader - self-only, percentage based -->
   <SupportModule Name="ModuleSupportShieldReload1Strategic4" Family="ShieldReloadStrategic4" Level="1">
     <Cost ResourceName="SystemProduction">60</Cost>
     <Cost ResourceName="Strategic4" Instant="true">1</Cost>
     <TechnologyPrerequisite Flags="Edition">TechnologySupportModule1</TechnologyPrerequisite>
-	
+
     <SimulationDescriptorReference Name="ClassModuleSupport"/>
     <SimulationDescriptorReference Name="ModuleTypeStrategic" />
     <CategorizedSimulationDescriptors Category="CategoryShieldReload">
@@ -385,7 +385,7 @@
     <Cost ResourceName="SystemProduction">80</Cost>
     <Cost ResourceName="Strategic6" Instant="true">1</Cost>
     <TechnologyPrerequisite Flags="Edition">TechnologyCuriosityModuleSupportShieldReload2Strategic6</TechnologyPrerequisite>
-	
+
     <SimulationDescriptorReference Name="ClassModuleSupport"/>
     <SimulationDescriptorReference Name="ModuleTypeStrategic" />
     <CategorizedSimulationDescriptors Category="CategoryShieldReload">
@@ -396,7 +396,7 @@
     <!--Battle action used after a battle-->
     <BattleActionReference Name="Ship_ShieldRegenerationPerSecondDynamic"/>
   </SupportModule>
-  
+
   <!-- Cloaking Modules -->
   <SupportModule Name="ModuleSupportInvisibilityLevel1" Family="Invisibility" Level="1">
     <Cost ResourceName="SystemProduction">90</Cost>
@@ -529,7 +529,7 @@
     <SimulationDescriptorReference Name="ModuleSupportJuggernautFleetEnhancer"/>
     <SimulationDescriptorReference Name="ModuleSupportJuggernautFleetEnhancerUmbralChoir"/>
   </SupportModule>
-  
+
   <!-- ******************************** -->
   <!-- ** Targeting Priority Modules **-->
   <!-- ******************************** -->
@@ -907,7 +907,7 @@
     <Cost ResourceName="Strategic6" Instant="true">1</Cost>
     <AIBattleSituations Situation="EnergyDefense" Mode="Use" Value="1"/>
     <AIBattleSituations Situation="EnergyWeapon" Mode="Against" Value="1"/>
-    <TechnologyPrerequisite Flags="Edition">TechnologySupportModule6</TechnologyPrerequisite>
+    <TechnologyPrerequisite Flags="Edition">TechnologyDefenseModuleStrategic6</TechnologyPrerequisite>
     <PathPrerequisite Flags="Edition">ClassShip,ShipRoleSupport</PathPrerequisite>
     <!--<InterpreterPrerequisite Flags="Edition">Path(Context, @ShipRoleSupport) or Path(Context, @ShipRoleHero)</InterpreterPrerequisite>-->
     <SimulationDescriptorReference Name="ClassModuleSupport"/>
@@ -1085,7 +1085,7 @@
     <!-- Descriptors used for tooltip -->
     </CategorizedSimulationDescriptors>
   </SupportModule>
-    
+
   <SupportModule Name="ModuleSupportSiege2Strategic5" Family="SiegeStrategic6" Level="2" GuiCategory="CategoryStrategic6">
     <Cost ResourceName="SystemProduction">85</Cost>
     <Cost ResourceName="Strategic6" Instant="true">1</Cost>
@@ -1107,7 +1107,7 @@
   <SupportModule Name="ModuleSupportSquadronOffenseEnhancer1Strategic4" Family="SquadronOffenseEnhancerStrategic4" Level="1">
     <Cost ResourceName="SystemProduction">70</Cost>
     <Cost ResourceName="Strategic4" Instant="true">1</Cost>
-    <TechnologyPrerequisite Flags="Edition">TechnologySupportModule5</TechnologyPrerequisite>
+    <TechnologyPrerequisite Flags="Edition">TechnologySupportModule6</TechnologyPrerequisite>
     <PathPrerequisite Flags="NoMoreThanOneSquadronOffenseEnhancerModule,Edition,Disable" Inverted="true">ClassShip/ClassSection/ClassModule,ModuleSupportSquadronOffenseEnhancer</PathPrerequisite>
     <InterpreterPrerequisite Flags="Edition">Path(Context, @ShipRoleMediumSupport) or Path(Context, @ShipRoleCarrier)</InterpreterPrerequisite>
     <SimulationDescriptorReference Name="ClassModuleMediumSupportAndCarrierShipOnly"/>
@@ -1121,9 +1121,9 @@
   <SupportModule Name="ModuleSupportSquadronDefenseEnhancer1Strategic3" Family="SquadronDefenseEnhancerStrategic3" Level="1">
     <Cost ResourceName="SystemProduction">70</Cost>
     <Cost ResourceName="Strategic3" Instant="true">1</Cost>
-    <TechnologyPrerequisite Flags="Edition">TechnologySupportModule1</TechnologyPrerequisite>
-    <PathPrerequisite Flags="NoMoreThanOneSquadronDefenseEnhancerModule,Edition,Disable" Inverted="true">ClassShip/ClassSection/ClassModule,ModuleSupportSquadronDefenseEnhancer</PathPrerequisite>
-    <InterpreterPrerequisite Flags="Edition">Path(Context, @ShipRoleMediumSupport) or Path(Context, @ShipRoleCarrier)</InterpreterPrerequisite>
+    <TechnologyPrerequisite Flags="Edition">TechnologyWeaponModule5</TechnologyPrerequisite>
+    <!--<PathPrerequisite Flags="NoMoreThanOneSquadronDefenseEnhancerModule,Edition,Disable" Inverted="true">ClassShip/ClassSection/ClassModule,ModuleSupportSquadronDefenseEnhancer</PathPrerequisite>
+    <InterpreterPrerequisite Flags="Edition">Path(Context, @ShipRoleTechnologyDefinitionMilitary25MediumSupport) or Path(Context, @ShipRoleCarrier)</InterpreterPrerequisite>-->
     <SimulationDescriptorReference Name="ClassModuleMediumSupportAndCarrierShipOnly"/>
     <SimulationDescriptorReference Name="ClassModuleSupport"/>
     <SimulationDescriptorReference Name="ClassModuleOnlyOnePerShip"/>
@@ -1135,14 +1135,13 @@
   <!-- ********************************** -->
   <!-- ***** EMP Defense Module **** -->
   <!-- ********************************** -->
-  
+
   <SupportModule Name="ModuleSupportEMPFlotillaDefense" Family="EMPShieldDefense" Level="4" GuiCategory="CategoryStrategic4">
     <Cost ResourceName="SystemProduction">100</Cost>
-    <Cost ResourceName="Strategic3" Instant="true">1</Cost>
-    <Cost ResourceName="Strategic4" Instant="true">1</Cost>
+    <Cost ResourceName="Strategic3" Instant="true">2</Cost>
     <AIBattleSituations Situation="Emp" Mode="Against" Value="1"/>
     <PathPrerequisite Flags="Edition">ClassShip,ShipRoleMediumSupport</PathPrerequisite>
-    <TechnologyPrerequisite Flags="Edition">TechnologyDefenseModuleStrategic3</TechnologyPrerequisite>
+    <TechnologyPrerequisite Flags="Edition">TechnologySquadronModuleBomber2</TechnologyPrerequisite>
     <DownloadableContentPrerequisite Flags="Prerequisite,Edition,UnlockAvailability">DLCVaulters</DownloadableContentPrerequisite>
     <SimulationDescriptorReference Name="ClassModuleSupport"/>
     <SimulationDescriptorReference Name="ClassModuleSupportShipOnly"/>
@@ -1151,10 +1150,10 @@
   </SupportModule>
 
   <SupportModule Name="ModuleSupportEMPWeaponDefense1Strategic4" Family="EMPWeaponDefense" Level="4">
-    <Cost ResourceName="SystemProduction">50</Cost>
-    <Cost ResourceName="Strategic4" Instant="true">1</Cost>
+    <Cost ResourceName="SystemProduction">100</Cost>
+    <Cost ResourceName="Strategic4" Instant="true">2</Cost>
     <AIBattleSituations Situation="Emp" Mode="Against" Value="1"/>
-    <TechnologyPrerequisite Flags="Edition">TechnologyDefenseModuleEMPWeaponDefense1</TechnologyPrerequisite>
+    <TechnologyPrerequisite Flags="Edition">TechnologySquadronModuleFighter2</TechnologyPrerequisite>
     <PathPrerequisite Flags="NoMoreThanOneModuleOfThisType,Edition,Disable" Inverted="true">ClassShip/ClassSection/ClassModule,ModuleSupportEMPWeaponDefense1Strategic4</PathPrerequisite>
     <DownloadableContentPrerequisite Flags="Prerequisite,Edition,UnlockAvailability">DLCVaulters</DownloadableContentPrerequisite>
     <SimulationDescriptorReference Name="ClassModuleSupport"/>
@@ -1247,5 +1246,5 @@
     <SimulationDescriptorReference Name="ModuleIncreasedSpeedQuest01"/>
     <BattleActionReference Name="BattleActionSupportInitialize"/>
   </SupportModule>
-  
+
 </Datatable>
